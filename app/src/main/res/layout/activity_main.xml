@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vghr.rovercontrollerproj.MainActivity">
+
+
+     <!--   <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true" />
+
+        </RelativeLayout>  -->
+
+        <LinearLayout
+            android:id="@+id/leftLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_weight="0.5"
+            android:background="@color/layoutColorLeft">
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/roverOneButtonForward"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="134dp"
+
+                    android:text="FORWARD"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/roverOneButtonBack"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="67dp"
+
+                    android:text="BACK"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roverOneButtonForward" />
+
+                <Button
+                    android:id="@+id/roverOneButtonLeft"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginStart="16dp"
+
+                    android:layout_marginTop="10dp"
+                    android:text="LEFT"
+                    app:layout_constraintBottom_toTopOf="@+id/roverOneButtonBack"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roverOneButtonForward"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/roverOneButtonRight"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+
+                    android:text="RIGHT"
+                    app:layout_constraintBottom_toTopOf="@+id/roverOneButtonBack"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roverOneButtonForward"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/roverOneLabel"
+                    android:layout_width="170dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="RoverOne Controller"
+                    android:textColor="#ff1a1a"
+                    android:textSize="18sp"
+                    android:typeface="sans"
+                    app:layout_constraintBottom_toTopOf="@+id/roverOneButtonForward"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteY="50dp"
+                    tools:layout_editor_absoluteX="-34dp"
+                    app:layout_constraintHorizontal_bias="0.495" />
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:checkedButton="@+id/radioButtonOneManualMode"
+                    app:layout_constraintTop_toBottomOf="@+id/roverOneButtonBack">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOneManualMode"
+                        style="@android:style/Widget.CompoundButton.RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="69dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="Manual Mode"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="#ff1a1a"
+                        android:textSize="18sp"
+                        android:typeface="sans"
+                        android:visibility="visible"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintHorizontal_bias="0.506"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/roverOneButtonBack" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOneAutonomusMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="Autonomus Mode"
+                        android:textColor="#ff1a1a"
+                        android:textSize="18sp"
+                        android:typeface="sans"
+                        android:visibility="visible"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButtonOneManualMode" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonOneCruiseMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="Cruise Mode"
+                        android:textColor="#ff1a1a"
+                        android:textSize="18sp"
+                        android:typeface="sans"
+                        android:visibility="visible"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButtonOneAutonomusMode" />
+                </RadioGroup>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rightLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_weight="0.5"
+            android:background="@color/layoutColorRight">
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp">
+
+                <Button
+                    android:id="@+id/roverTwoButtonForward"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="134dp"
+
+                    android:text="FORWARD"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/roverTwoButtonBack"
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="66dp"
+
+                    android:text="BACK"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roverTwoButtonForward" />
+
+                <Button
+                    android:id="@+id/roverTwoButtonLeft"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+
+                    android:text="LEFT"
+                    app:layout_constraintBottom_toTopOf="@+id/roverTwoButtonBack"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roverTwoButtonForward"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/roverTwoButtonRight"
+                    android:layout_width="80dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="10dp"
+
+                    android:text="RIGHT"
+                    app:layout_constraintBottom_toTopOf="@+id/roverTwoButtonBack"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roverTwoButtonForward"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/roverTwoLabel"
+                    android:layout_width="170dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="RoverTwo Controller"
+                    android:textColor="#ff1a1a"
+                    android:textSize="18sp"
+                    android:typeface="sans"
+                    app:layout_constraintBottom_toTopOf="@+id/roverTwoButtonForward"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="-21dp"
+                    tools:layout_editor_absoluteY="50dp" />
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:checkedButton="@+id/radioButtonTwoManualMode"
+                    app:layout_constraintTop_toBottomOf="@+id/roverTwoButtonBack">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonTwoManualMode"
+                        style="@android:style/Widget.CompoundButton.RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="69dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="Manual Mode"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="#ff1a1a"
+                        android:textSize="18sp"
+                        android:typeface="sans"
+                        android:visibility="visible"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintHorizontal_bias="0.506"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/roverOneButtonBack" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonTwoAutonomusMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="Autonomus Mode"
+                        android:textColor="#ff1a1a"
+                        android:textSize="18sp"
+                        android:typeface="sans"
+                        android:visibility="visible"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButtonOneManualMode" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonTwoCruiseMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="Cruise Mode"
+                        android:textColor="#ff1a1a"
+                        android:textSize="18sp"
+                        android:typeface="sans"
+                        android:visibility="visible"
+                        android:onClick="onRadioButtonClicked"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButtonOneAutonomusMode" />
+                </RadioGroup>
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+</LinearLayout>
